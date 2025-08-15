@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USIU-A Event Booking Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://via.placeholder.com/150x50?text=USIU-A+Logo" alt="USIU-A Logo" class="logo">
+        </div>
+        <h1>Event Booking Dashboard</h1>
+    </header>
+
+    <main>
+        <section class="event-list-section">
+            <h2>Upcoming Events</h2>
+            <table id="event-table">
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Venue</th>
+                        <th>Slots Available</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-event="Tech Symposium">
+                        <td>Tech Symposium</td>
+                        <td>Sep 10, 2025</td>
+                        <td>Auditorium</td>
+                        <td class="slots">50</td>
+                        <td><button class="register-btn">Register</button></td>
+                    </tr>
+                    <tr data-event="Career Fair">
+                        <td>Career Fair</td>
+                        <td>Oct 5, 2025</td>
+                        <td>Gymnasium</td>
+                        <td class="slots">150</td>
+                        <td><button class="register-btn">Register</button></td>
+                    </tr>
+                    <tr data-event="Drama Festival">
+                        <td>Drama Festival</td>
+                        <td>Nov 1, 2025</td>
+                        <td>Main Hall</td>
+                        <td class="slots">75</td>
+                        <td><button class="register-btn">Register</button></td>
+                    </tr>
+                    <tr data-event="Open Mic Night">
+                        <td>Open Mic Night</td>
+                        <td>Nov 20, 2025</td>
+                        <td>Student Center</td>
+                        <td class="slots">30</td>
+                        <td><button class="register-btn">Register</button></td>
+                    </tr>
+                    <tr data-event="Sports Day">
+                        <td>Sports Day</td>
+                        <td>Dec 5, 2025</td>
+                        <td>Athletic Field</td>
+                        <td class="slots">200</td>
+                        <td><button class="register-btn">Register</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div id="registration-message"></div>
+        </section>
+
+        <section class="booking-form-section">
+            <h2>Manual Registration</h2>
+            <form id="booking-form">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentId">Student ID:</label>
+                    <input type="text" id="studentId" name="studentId" required pattern="[0-9]{5,8}" title="Student ID must be 5-8 digits">
+                </div>
+                <div class="form-group">
+                    <label for="eventSelect">Event:</label>
+                    <select id="eventSelect" name="eventSelect" required>
+                        <option value="">--Select an event--</option>
+                        </select>
+                </div>
+                <button type="submit" id="submit-btn">Book Event</button>
+            </form>
+            <div id="form-confirmation"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 USIU-A. All rights reserved.</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
